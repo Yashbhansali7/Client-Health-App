@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:fluttericon/entypo_icons.dart';
+import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -385,11 +386,8 @@ class _AppointmentAddState extends State<AppointmentAdd> {
                                     Colors.red,
                                     'No Date Slot Selected');
                               } else if (tIndex == null) {
-                                confirmationDialog(
-                                    context,
-                                    MaterialIcons.timer_off,
-                                    Colors.red,
-                                    'No Time Slot Selected');
+                                confirmationDialog(context, Icons.timer_off,
+                                    Colors.red, 'No Time Slot Selected');
                               } else {
                                 addAppointDialog(context, docName);
                               }
@@ -404,7 +402,7 @@ class _AppointmentAddState extends State<AppointmentAdd> {
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
-                            icon: const Icon(Entypo.cross),
+                            icon: const Icon(Entypo.cancel),
                             label: const Text('Cancel')),
                       ],
                     ),
@@ -482,7 +480,7 @@ class _AppointmentAddState extends State<AppointmentAdd> {
                                     Navigator.of(context).pop();
                                     confirmationDialog(
                                         context,
-                                        MaterialIcons.timer,
+                                        Icons.timer,
                                         Colors.green[800],
                                         'Appointment Confirmed!!');
                                   }

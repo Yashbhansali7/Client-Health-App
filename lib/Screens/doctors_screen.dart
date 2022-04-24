@@ -1,7 +1,6 @@
 import 'package:clienthealth/Screens/appoint_add.dart';
 import 'package:clienthealth/Screens/doc_details.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -110,8 +109,7 @@ class DoctorsScreen extends StatelessWidget {
                                         arguments:
                                             chatDocs[index].data()['docName']);
                                   },
-                                  icon: Icon(MaterialCommunityIcons
-                                      .account_card_details),
+                                  icon: Icon(Icons.card_membership),
                                   label: Container(
                                     width: 85,
                                     child: Text(
@@ -128,8 +126,7 @@ class DoctorsScreen extends StatelessWidget {
                                         arguments:
                                             chatDocs[index].data()['docName']);
                                   },
-                                  icon: Icon(MaterialCommunityIcons
-                                      .book_plus_multiple),
+                                  icon: Icon(Icons.bookmarks_sharp),
                                   label: Container(
                                     width: 85,
                                     child: Text(

@@ -1,5 +1,5 @@
 import '../Screens/review_add_screen.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+
 import 'package:intl/intl.dart';
 import '../Widgets/app_drawer.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +81,7 @@ class ReviewsScreen extends StatelessWidget {
         child: FloatingActionButton(
           onPressed: () => Navigator.of(context).pushNamed(AddReview.routeName),
           child: Icon(
-            MaterialIcons.rate_review,
+            Icons.rate_review,
             size: 28,
           ),
         ),

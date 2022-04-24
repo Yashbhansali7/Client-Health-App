@@ -1,6 +1,5 @@
 import '../Providers/reviews.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class AddReview extends StatefulWidget {
@@ -117,7 +116,7 @@ class _AddReviewState extends State<AddReview> {
         width: 220,
         margin: EdgeInsets.only(bottom: 30),
         child: FloatingActionButton.extended(
-          icon: Icon(MaterialIcons.verified_user),
+          icon: Icon(Icons.verified_user),
           backgroundColor: Theme.of(context).primaryColor,
           label: Text(
             'Submit Review',

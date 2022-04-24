@@ -7,7 +7,8 @@ import 'package:clienthealth/Screens/reminder_screen.dart';
 import 'package:clienthealth/Screens/report_screen.dart';
 import 'package:clienthealth/Screens/review_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:fluttericon/entypo_icons.dart';
+
 import '../Widgets/app_drawer.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -251,14 +252,16 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 280,
-                child: new StaggeredGridView.countBuilder(
-                  physics: new NeverScrollableScrollPhysics(),
-                  crossAxisCount: 4,
-                  padding: EdgeInsets.only(right: 20, left: 20, bottom: 0),
-                  itemCount: 4,
-                  itemBuilder: (BuildContext context, int i) => i < 2
-                      ? GestureDetector(
+                //height: 280,
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2),
+                    physics: NeverScrollableScrollPhysics(),
+                    padding: EdgeInsets.only(right: 20, left: 20, bottom: 0),
+                    itemCount: 4,
+                    shrinkWrap: true,
+                    itemBuilder: (BuildContext context, int i) =>
+                        GestureDetector(
                           onTap: () {
                             if (i == 0) {
                               Navigator.of(context)
@@ -266,50 +269,7 @@ class HomeScreen extends StatelessWidget {
                             } else if (i == 1) {
                               Navigator.of(context)
                                   .pushNamed(AppointScreen.routeName);
-                            }
-                          },
-                          child: Card(
-                            elevation: 10,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            color: Colors.indigo,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  alignment: Alignment.center,
-                                  height: 120,
-                                  width: 150,
-                                  child: Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                    ),
-                                    child: Image.asset(
-                                      images[i],
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
-                                  //   width: 100,
-                                  child: Text(
-                                    texts[i],
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
-                                    textAlign: TextAlign.center,
-                                    softWrap: true,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      : GestureDetector(
-                          onTap: () {
-                            if (i == 2) {
+                            } else if (i == 2) {
                               Navigator.of(context)
                                   .pushNamed(HospitalsScreen.routeName);
                             } else if (i == 3) {
@@ -318,40 +278,48 @@ class HomeScreen extends StatelessWidget {
                             }
                           },
                           child: Card(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.only(left: 10),
-                                  width: 110,
-                                  child: Text(texts[i],
-                                      softWrap: true,
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 16)),
-                                ),
-                                Container(
-                                  height: 55,
-                                  width: 55,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(15),
-                                    child: Image.asset(
-                                      images[i],
-                                      fit: BoxFit.fill,
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30)),
+                            color: Colors.indigo,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    height: 120,
+                                    width: 150,
+                                    child: Card(
+                                      clipBehavior: Clip.antiAlias,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Image.asset(
+                                        images[i],
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                  Container(
+                                    padding:
+                                        EdgeInsets.symmetric(horizontal: 5),
+                                    //   width: 100,
+                                    child: Text(
+                                      texts[i],
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 16),
+                                      textAlign: TextAlign.center,
+                                      softWrap: true,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
-                            color: Colors.indigo,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20)),
                           ),
-                        ),
-                  staggeredTileBuilder: (int i) =>
-                      new StaggeredTile.count(2, i < 2 ? 2 : 1),
-                  mainAxisSpacing: 14.0,
-                  crossAxisSpacing: 14.0,
-                ),
+                        )),
               ),
               SizedBox(
                   height: 410,

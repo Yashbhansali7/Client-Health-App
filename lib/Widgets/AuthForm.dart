@@ -1,8 +1,9 @@
 import 'dart:io';
 
+import 'package:fluttericon/entypo_icons.dart';
+
 import '../Widgets/imgpicker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class AuthForm extends StatefulWidget {
   AuthForm(this.submitFn);

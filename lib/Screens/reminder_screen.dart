@@ -1,4 +1,3 @@
-import 'package:flutter_icons/flutter_icons.dart';
 import '../Widgets/app_drawer.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
@@ -357,7 +356,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                             ],
                           ),
                           leading: Icon(
-                            MaterialIcons.add_alarm,
+                            Icons.add_alarm,
                             color: Colors.deepPurple,
                             size: 30,
                           ),

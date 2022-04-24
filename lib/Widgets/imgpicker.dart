@@ -13,7 +13,7 @@ class _LoginImgpickerState extends State<LoginImgpicker> {
   File _pickedImage;
   void _pickImg(ImageSource img) async {
     final picker = ImagePicker();
-    final pickedImage = await picker.getImage(source: ImageSource.gallery);
+    final pickedImage = await picker.getImage(source: img);
     final pickedImageFile = File(pickedImage.path);
     setState(() {
       _pickedImage = pickedImageFile;
